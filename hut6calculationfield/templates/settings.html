@@ -1,0 +1,45 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textareaField({
+	label: 'Calculation',
+	name: 'hut6Calculation',
+	class: 'hut6-calculation',
+	value: settings.hut6Calculation
+}) }}
+
+{% verbatim %}
+
+<p> You can include tags that output entry properties, such as {{ object.myCustomField }}.</p>
+
+    <p>
+        The Title Format is a full-blown Twig template, and it will get parsed whenever your entries are saved.
+    </p>
+
+    <p>
+        The entry will be passed to this template as a variable named object, like so
+        <code>{{ object.property }}</code>
+    </p>
+    <p>
+        You can also use the craft global variable, such as
+        <code>{{ craft.categories }}</code> or
+        <code>{{ craft.entries }}</code>, and even include templates.
+    </p>
+    
+{% endverbatim %}
+
+<style type="text/css">
+    
+textarea.hut6-calculation {
+	  min-height: 100px;
+    font-family: Consolas,monaco,monospace;
+    max-width: 840px;
+}
+
+/* 
+If we do this we need to dynamically add it back when we switch 
+away from this fieldtype, otherwise it remains hidden
+#instructions-field {
+	display: none;
+}
+*/
+</style> 

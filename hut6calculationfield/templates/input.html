@@ -1,0 +1,9 @@
+<p>
+    {% if value %}
+        Current Value: <strong>{{ value}}</strong>
+    {% else %}
+        Calculation Pending...
+    {% endif %}
+</p>
+
+<input name="{{ name }}" type="hidden" value="{{ value }}">
